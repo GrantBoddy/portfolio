@@ -5,24 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grant Boddy | Portfolio</title>
   <style>
+    /* === Custom Font Faces === */
+    @font-face {
+      font-family: 'AquireBold';
+      src: url('assets/fonts/AquireBold-8Ma60.otf') format('opentype');
+      font-weight: bold;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Aquire';
+      src: url('assets/fonts/Aquire-BW0ox.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    :root {
+      --heading-font: 'AquireBold', Arial, sans-serif;
+      --body-font: 'Aquire', Arial, sans-serif;
+    }
     html, body {
       background: #000 !important;
       color: #fff;
+      font-family: var(--body-font);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      box-sizing: border-box;
     }
-    a { color: #7cf57c; }
+    body {
+      position: relative;
+      min-height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+    }
+    /* === Navigation === */
+    nav {
+      position: absolute;
+      top: 2rem;
+      right: 3rem;
+      z-index: 2;
+      font-size: 1.25rem;
+      font-family: var(--body-font);
+    }
+    nav a {
+      color: #7cf57c;
+      text-decoration: none;
+      margin-left: 1.25rem;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    /* === Main Content === */
+    .main-content {
+      position: relative;
+      z-index: 1;
+      margin-top: 15vh;
+      margin-left: 6vw;
+      max-width: 600px;
+    }
+    h1 {
+      font-family: var(--heading-font);
+      font-size: 2.8rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    /* === Easy Customization === */
+    /* To change fonts, just update the :root CSS variables above. */
   </style>
 </head>
 <body>
   <div id="particles-js" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;"></div>
-  <div style="position:relative;z-index:1;">
-    <h1>Welcome to Grant Boddy’s Portfolio</h1>
-  <p>This site is currently under development. Stay tuned!</p>
   <nav>
-    <a href="index.html">Home</a> |
-    <a href="resume.html">Resume</a> |
-    <a href="projects.html">Projects</a> |
+    <a href="index.html">Home</a>
+    <a href="resume.html">Resume</a>
+    <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
   </nav>
+  <div class="main-content">
+    <h1>Welcome to Grant Boddy’s Portfolio</h1>
+    <p>This site is currently under development. Stay tuned!</p>
   </div>
   <script src="particles.js-loader.js"></script>
 </body>
