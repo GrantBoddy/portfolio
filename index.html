@@ -75,6 +75,27 @@
       font-size: 1.25rem;
       margin-bottom: 2.5rem;
     }
+    /* === Moshed Images Comparison Styling === */
+    .image-comparison {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+    }
+    .image-comparison img,
+    .image-comparison video {
+      max-width: 340px;
+      max-height: 400px;
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.45);
+      background: #111;
+      object-fit: cover;
+    }
     /* === Easy Customization === */
     /* To change fonts, just update the :root CSS variables above. */
   </style>
@@ -90,6 +111,17 @@
   <div class="main-content">
     <h1>Welcome to Grant Boddy’s Portfolio</h1>
     <p>This site is currently under development. Stay tuned!</p>
+    <!-- === BEGIN: Moshed Images Comparison === -->
+    <div class="image-comparison">
+      <img src="assets/images/MOSHED-%20JPG%20-%201.jpg" alt="Moshed JPG 1">
+      <img src="assets/images/MOSHED-%20JPG%20-%202.jpg" alt="Moshed JPG 2">
+      <img src="assets/images/MOSHED-%20JPG%20-%203.jpg" alt="Moshed JPG 3">
+      <img src="assets/images/MOSHED-GIF%20-%201.gif" alt="Moshed GIF 1">
+      <img src="assets/images/MOSHED-%20GIF%20-%202.gif" alt="Moshed GIF 2">
+      <video src="assets/images/MOSHED-%20WEBM%20-%201.webm" autoplay loop muted playsinline></video>
+      <video src="assets/images/MOSHED-%20WEBM%20-%202.webm" autoplay loop muted playsinline></video>
+    </div>
+    <!-- === END: Moshed Images Comparison === -->
   </div>
   <script src="particles.js-loader.js"></script>
 </body>
