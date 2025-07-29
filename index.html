@@ -57,36 +57,13 @@
     nav a:hover {
       color: #fff;
     }
-    /* === Main Content === */
-    .main-content {
-      position: relative;
-      z-index: 1;
-      margin-top: 15vh;
-      margin-left: 6vw;
-      max-width: 600px;
-    }
-    h1 {
-      font-family: var(--heading-font);
-      font-size: 2.8rem;
-      letter-spacing: 1.5px;
-      margin-bottom: 1.5rem;
-    }
-    p {
-      font-size: 1.25rem;
-      margin-bottom: 2.5rem;
-    }
-    /* === Moshed Images Comparison Styling === */
-    .image-comparison {
+    /* === Profile Image Styling === */
+    .profile-image {
+      margin: 2.5rem 0 2rem 0;
       display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
       justify-content: flex-start;
-      align-items: flex-start;
-      margin-top: 3rem;
-      margin-bottom: 2rem;
     }
-    .image-comparison img,
-    .image-comparison video {
+    .profile-image video {
       max-width: 340px;
       max-height: 400px;
       width: 100%;
@@ -96,8 +73,84 @@
       background: #111;
       object-fit: cover;
     }
-    /* === Easy Customization === */
-    /* To change fonts, just update the :root CSS variables above. */
+    /* === About Section === */
+    .about-section {
+      margin-top: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .about-section h2 {
+      font-size: 2rem;
+      font-family: var(--heading-font);
+      margin-bottom: 0.5rem;
+    }
+    .about-section p {
+      font-size: 1.18rem;
+      color: #e0e0e0;
+      max-width: 600px;
+    }
+    /* === Skills Section === */
+    .skills-section {
+      margin-bottom: 2.5rem;
+    }
+    .skills-section h2 {
+      font-size: 2rem;
+      font-family: var(--heading-font);
+      margin-bottom: 0.5rem;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+    .skill-item {
+      background: #181818;
+      color: #7cf57c;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .skill-item:hover::after {
+      content: attr(data-level);
+      position: absolute;
+      left: 50%;
+      top: 110%;
+      transform: translateX(-50%);
+      background: #222;
+      color: #fff;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      white-space: nowrap;
+      z-index: 3;
+    }
+    .skill-item:hover {
+      background: #222;
+      color: #fff;
+    }
+    /* === Contact Section === */
+    .contact-section {
+      margin-bottom: 2.5rem;
+    }
+    .contact-section h2 {
+      font-size: 2rem;
+      font-family: var(--heading-font);
+      margin-bottom: 0.5rem;
+    }
+    .contact-section p, .contact-section a {
+      font-size: 1.18rem;
+      color: #7cf57c;
+      text-decoration: none;
+    }
+    .contact-section a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -111,13 +164,36 @@
   <div class="main-content">
     <h1>Hey Everyone!</h1>
     <h1>I’m Grant Boddy</h1>
-    <p>This site is currently under development. Stay tuned!</p>
-    <!-- === BEGIN: Moshed Images Comparison === -->
-    <div class="image-comparison">
+    <!-- === BEGIN: Main Profile Image === -->
+    <div class="profile-image">
       <video src="assets/images/MOSHED-%20WEBM%20-%207.webm" autoplay loop muted playsinline></video>
-
     </div>
-    <!-- === END: Moshed Images Comparison === -->
+    <!-- === END: Main Profile Image === -->
+
+    <!-- === BEGIN: About/Summary Section === -->
+    <section class="about-section">
+      <h2>About Me</h2>
+      <p><!-- TODO: Add a short, punchy summary of who you are, what you do, and what you're looking for. --></p>
+    </section>
+    <!-- === END: About/Summary Section === -->
+
+    <!-- === BEGIN: Skills/Technologies Section === -->
+    <section class="skills-section">
+      <h2>Skills & Technologies</h2>
+      <!-- TODO: Add a grid/list of logos or names below. Each should have a hover effect showing your experience level. -->
+      <div class="skills-grid">
+        <!-- Example: <div class="skill-item" data-level="Expert">Python</div> -->
+      </div>
+    </section>
+    <!-- === END: Skills/Technologies Section === -->
+
+    <!-- === BEGIN: Contact Section === -->
+    <section class="contact-section">
+      <h2>Contact</h2>
+      <!-- TODO: Add a simple contact prompt or button (extended info is on separate page) -->
+      <p>Interested in working together or want to connect? <a href="contact.html">Contact me here</a>.</p>
+    </section>
+    <!-- === END: Contact Section === -->
   </div>
   <script src="particles.js-loader.js"></script>
 </body>
