@@ -37,6 +37,11 @@
       width: 100vw;
       overflow-x: hidden;
       padding-top: 2.5rem;
+      opacity: 1;
+      transition: opacity 0.6s;
+    }
+    body.fade {
+      opacity: 0;
     }
     /* === Navigation === */
     nav {
@@ -167,5 +172,33 @@
     </div>
   </div>
   <script src="particles.js-loader.js"></script>
+  <script>
+    // Fade-in on load
+    document.body.style.opacity = 0;
+    window.addEventListener('DOMContentLoaded', function() {
+      document.body.style.transition = 'opacity 0.6s';
+      document.body.style.opacity = 1;
+    });
+    // Fade-out on navigation
+    document.querySelectorAll('a[href]').forEach(function(link) {
+      // Only handle internal links
+      if (link.hostname === window.location.hostname) {
+        link.addEventListener('click', function(e) {
+          // Middle click, cmd/ctrl click, and target _blank should be ignored
+          if (
+            e.defaultPrevented ||
+            e.button !== 0 ||
+            e.metaKey || e.ctrlKey || e.shiftKey || e.altKey ||
+            link.target === '_blank'
+          ) return;
+          e.preventDefault();
+          document.body.style.opacity = 0;
+          setTimeout(function() {
+            window.location.href = link.href;
+          }, 600);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
