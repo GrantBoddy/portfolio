@@ -146,7 +146,7 @@
       - Use <span style="color: #7cf57c">...</span> for green highlights
       - Use <br> for manual line breaks
     */
-    /* === Dropping Texts Animation === */
+    /* === Dropping Texts Animation (One at a Time) === */
     .professional-title {
       margin-top: 1.5rem;
       margin-bottom: 2.5rem;
@@ -176,20 +176,25 @@
       font-family: var(--heading-font);
       font-weight: bold;
       color: #7cf57c;
-      /* Animation duration (change for faster/slower) */
-      --drop-duration: 2.5s;
+      /* === IMPORTANT: ===
+         If you add/remove roles, update --drop-count below to match the number of <span> items!
+         Example: 8 items => --drop-count: 8;
+      */
+      --drop-count: 8;
+      --drop-duration: 2.5s; /* how long each word stays visible */
+      --total-duration: calc(var(--drop-count) * var(--drop-duration));
     }
     .dropping-texts span {
       position: absolute;
       left: 0;
       top: 0;
       opacity: 0;
-      animation: drop-text var(--drop-duration) linear infinite;
       width: max-content;
       white-space: nowrap;
+      animation: drop-text-one-at-a-time var(--total-duration) steps(1, end) infinite;
     }
     /* Each span gets a different animation-delay */
-    .dropping-texts span:nth-child(1) { animation-delay: 0s; }
+    .dropping-texts span:nth-child(1) { animation-delay: calc(var(--drop-duration) * 0); }
     .dropping-texts span:nth-child(2) { animation-delay: calc(var(--drop-duration) * 1); }
     .dropping-texts span:nth-child(3) { animation-delay: calc(var(--drop-duration) * 2); }
     .dropping-texts span:nth-child(4) { animation-delay: calc(var(--drop-duration) * 3); }
@@ -197,11 +202,10 @@
     .dropping-texts span:nth-child(6) { animation-delay: calc(var(--drop-duration) * 5); }
     .dropping-texts span:nth-child(7) { animation-delay: calc(var(--drop-duration) * 6); }
     .dropping-texts span:nth-child(8) { animation-delay: calc(var(--drop-duration) * 7); }
-    @keyframes drop-text {
+    @keyframes drop-text-one-at-a-time {
       0% { opacity: 0; transform: translateY(-30%); }
-      8% { opacity: 1; transform: translateY(0); }
-      25% { opacity: 1; transform: translateY(0); }
-      32% { opacity: 0; transform: translateY(30%); }
+      5% { opacity: 1; transform: translateY(0); }
+      80% { opacity: 1; transform: translateY(0); }
       100% { opacity: 0; transform: translateY(30%); }
     }
     /* === Skills Section === */
