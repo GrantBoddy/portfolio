@@ -146,7 +146,7 @@
       - Use <span style="color: #7cf57c">...</span> for green highlights
       - Use <br> for manual line breaks
     */
-    /* === Dropping Texts Animation (Prismic-Style, Fixed) === */
+    /* === Dropping Texts Animation (with gap between words) === */
     .professional-title, .static-title {
       font-size: 2.2rem;
       font-family: var(--heading-font);
@@ -177,15 +177,20 @@
       top: 0;
     }
     /* Update the animation duration and delays if you add/remove roles! */
-    .dropping-texts > div:nth-child(1) { animation: roll 16s linear infinite 0s; }
-    .dropping-texts > div:nth-child(2) { animation: roll 16s linear infinite 2s; }
-    .dropping-texts > div:nth-child(3) { animation: roll 16s linear infinite 4s; }
-    .dropping-texts > div:nth-child(4) { animation: roll 16s linear infinite 6s; }
-    .dropping-texts > div:nth-child(5) { animation: roll 16s linear infinite 8s; }
-    .dropping-texts > div:nth-child(6) { animation: roll 16s linear infinite 10s; }
-    .dropping-texts > div:nth-child(7) { animation: roll 16s linear infinite 12s; }
-    .dropping-texts > div:nth-child(8) { animation: roll 16s linear infinite 14s; }
-    @keyframes roll {
+    /*
+      8 roles: 2s visible, 0.5s gap (invisible), total = 20s
+      Each role: visible 0-12.5%, gap 12.5-25%
+      nth-child(n): animation-delay = (n-1)*2.5s
+    */
+    .dropping-texts > div:nth-child(1) { animation: roll-gap 20s linear infinite 0s; }
+    .dropping-texts > div:nth-child(2) { animation: roll-gap 20s linear infinite 2.5s; }
+    .dropping-texts > div:nth-child(3) { animation: roll-gap 20s linear infinite 5s; }
+    .dropping-texts > div:nth-child(4) { animation: roll-gap 20s linear infinite 7.5s; }
+    .dropping-texts > div:nth-child(5) { animation: roll-gap 20s linear infinite 10s; }
+    .dropping-texts > div:nth-child(6) { animation: roll-gap 20s linear infinite 12.5s; }
+    .dropping-texts > div:nth-child(7) { animation: roll-gap 20s linear infinite 15s; }
+    .dropping-texts > div:nth-child(8) { animation: roll-gap 20s linear infinite 17.5s; }
+    @keyframes roll-gap {
       0% {
         font-size:0px;
         opacity:0;
@@ -193,26 +198,26 @@
         margin-top:0px;
         transform: rotate(-25deg);
       }
-      3% {
-        opacity:1;
-        transform: rotate(0deg);
-      }
       5% {
+        opacity:1;
+        transform: rotate(0deg);
+      }
+      10% {
         font-size:2.2rem;
         opacity:1;
         margin-left:0px;
         margin-top:0px;
       }
-      20% {
+      12.5% {
         font-size:2.2rem;
         opacity:1;
         margin-left:0px;
         margin-top:0px;
         transform: rotate(0deg);
       }
-      27% {
+      15% {
         font-size:0px;
-        opacity:0.5;
+        opacity:0;
         margin-left:20px;
         margin-top:100px;
       }
