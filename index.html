@@ -57,26 +57,69 @@
     nav a:hover {
       color: #fff;
     }
-    /* === Profile Image Styling === */
+    /* === Main Content Layout === */
+    .main-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: 10vh;
+      margin-left: 6vw;
+      margin-right: 6vw;
+      gap: 5vw;
+      min-height: 70vh;
+    }
+    .left-column {
+      flex: 1 1 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .main-title {
+      font-family: var(--heading-font);
+      font-size: 3.2rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
+    .subtitle {
+      font-family: var(--heading-font);
+      font-size: 2.3rem;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      margin-top: 0;
+    }
     .profile-image {
       margin: 2.5rem 0 2rem 0;
       display: flex;
       justify-content: flex-start;
+      width: 370px;
+      height: 440px;
     }
     .profile-image video {
-      max-width: 340px;
-      max-height: 400px;
+      max-width: 370px;
+      max-height: 440px;
       width: 100%;
-      height: auto;
+      height: 100%;
       border-radius: 16px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.45);
       background: #111;
       object-fit: cover;
     }
+    .right-column {
+      flex: 1 1 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 2.5rem;
+      margin-top: 1.5rem;
+    }
     /* === About Section === */
     .about-section {
-      margin-top: 2.5rem;
-      margin-bottom: 2rem;
+      margin-top: 0;
+      margin-bottom: 0;
     }
     .about-section h2 {
       font-size: 2rem;
@@ -90,7 +133,7 @@
     }
     /* === Skills Section === */
     .skills-section {
-      margin-bottom: 2.5rem;
+      margin-bottom: 0;
     }
     .skills-section h2 {
       font-size: 2rem;
@@ -135,7 +178,7 @@
     }
     /* === Contact Section === */
     .contact-section {
-      margin-bottom: 2.5rem;
+      margin-bottom: 0;
     }
     .contact-section h2 {
       font-size: 2rem;
@@ -162,38 +205,35 @@
     <a href="contact.html">Contact</a>
   </nav>
   <div class="main-content">
-    <h1>Hey Everyone!</h1>
-    <h1>I’m Grant Boddy</h1>
-    <!-- === BEGIN: Main Profile Image === -->
-    <div class="profile-image">
-      <video src="assets/images/MOSHED-%20WEBM%20-%207.webm" autoplay loop muted playsinline></video>
-    </div>
-    <!-- === END: Main Profile Image === -->
-
-    <!-- === BEGIN: About/Summary Section === -->
-    <section class="about-section">
-      <h2>About Me</h2>
-      <p><!-- TODO: Add a short, punchy summary of who you are, what you do, and what you're looking for. --></p>
-    </section>
-    <!-- === END: About/Summary Section === -->
-
-    <!-- === BEGIN: Skills/Technologies Section === -->
-    <section class="skills-section">
-      <h2>Skills & Technologies</h2>
-      <!-- TODO: Add a grid/list of logos or names below. Each should have a hover effect showing your experience level. -->
-      <div class="skills-grid">
-        <!-- Example: <div class="skill-item" data-level="Expert">Python</div> -->
+    <div class="left-column">
+      <h1 class="main-title">Hey Everyone!</h1>
+      <h1 class="subtitle">I’m Grant Boddy</h1>
+      <div class="profile-image">
+        <video src="assets/images/MOSHED-%20WEBM%20-%207.webm" autoplay loop muted playsinline></video>
       </div>
-    </section>
-    <!-- === END: Skills/Technologies Section === -->
-
-    <!-- === BEGIN: Contact Section === -->
-    <section class="contact-section">
-      <h2>Contact</h2>
-      <!-- TODO: Add a simple contact prompt or button (extended info is on separate page) -->
-      <p>Interested in working together or want to connect? <a href="contact.html">Contact me here</a>.</p>
-    </section>
-    <!-- === END: Contact Section === -->
+    </div>
+    <div class="right-column">
+      <!-- === BEGIN: About/Summary Section === -->
+      <section class="about-section">
+        <h2>About Me</h2>
+        <p><!-- TODO: Add a short, punchy summary of who you are, what you do, and what you're looking for. --></p>
+      </section>
+      <!-- === END: About/Summary Section === -->
+      <!-- === BEGIN: Skills/Technologies Section === -->
+      <section class="skills-section">
+        <h2>Skills & Technologies</h2>
+        <div class="skills-grid">
+          <!-- Example: <div class="skill-item" data-level="Expert">Python</div> -->
+        </div>
+      </section>
+      <!-- === END: Skills/Technologies Section === -->
+      <!-- === BEGIN: Contact Section === -->
+      <section class="contact-section">
+        <h2>Contact</h2>
+        <p>Interested in working together or want to connect? <a href="contact.html">Contact me here</a>.</p>
+      </section>
+      <!-- === END: Contact Section === -->
+    </div>
   </div>
   <script src="particles.js-loader.js"></script>
 </body>
