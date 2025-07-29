@@ -116,181 +116,38 @@
       gap: 2.5rem;
       margin-top: 1.5rem;
     }
-    /* === About Section === */
-    .about-section {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-    .about-section h2 {
-      font-size: 2rem;
+    /* === Placeholder Boxes for Right Column === */
+    .placeholder-title-box {
+      background: rgba(124,245,124,0.08);
+      border-left: 4px solid #7cf57c;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.6rem;
       font-family: var(--heading-font);
-      margin-bottom: 0.5rem;
-    }
-    .about-section p {
-      font-size: 1.18rem;
-      color: #e0e0e0;
-      max-width: 600px;
-    }
-    .about-summary p {
-      margin-bottom: 1.3rem;
-      font-size: 1.18rem;
-      color: #e0e0e0;
-      line-height: 1.65;
-      max-width: 600px;
-    }
-    /*
-      To customize summary formatting:
-      - Use <strong>...</strong> for bold (uses bold font)
-      - Use <em>...</em> for italics
-      - Use <span style="font-family: 'AquireBold'">...</span> for custom bold font
-      - Use <span style="color: #7cf57c">...</span> for green highlights
-      - Use <br> for manual line breaks
-    */
-    /* === Dropping Texts Animation (with gap between words) === */
-    .professional-title, .static-title {
-      font-size: 2.2rem;
-      font-family: var(--heading-font);
-      font-weight: bold;
       color: #fff;
-      margin-bottom: 0.1em;
-      text-align: left;
-      display: block;
-    }
-    .dropping-texts {
-      display: inline-block;
-      width: 340px;
-      text-align: left;
-      height: 2.2rem;
-      position: relative;
-      margin-top: 0.2em;
-    }
-    .dropping-texts > div {
-      font-size: 0px;
-      opacity: 0;
-      margin-left: -30px;
-      position: absolute;
       font-weight: bold;
-      font-family: var(--heading-font);
-      color: #7cf57c;
-      box-shadow: 0px 60px 25px -20px rgba(0,0,0,0.5);
-      left: 0;
-      top: 0;
-    }
-    /* Update the animation duration and delays if you add/remove roles! */
-    /*
-      8 roles: 2s visible, 0.5s gap (invisible), total = 20s
-      Each role: visible 0-12.5%, gap 12.5-25%
-      nth-child(n): animation-delay = (n-1)*2.5s
-    */
-    .dropping-texts > div:nth-child(1) { animation: roll-gap 20s linear infinite 0s; }
-    .dropping-texts > div:nth-child(2) { animation: roll-gap 20s linear infinite 2.5s; }
-    .dropping-texts > div:nth-child(3) { animation: roll-gap 20s linear infinite 5s; }
-    .dropping-texts > div:nth-child(4) { animation: roll-gap 20s linear infinite 7.5s; }
-    .dropping-texts > div:nth-child(5) { animation: roll-gap 20s linear infinite 10s; }
-    .dropping-texts > div:nth-child(6) { animation: roll-gap 20s linear infinite 12.5s; }
-    .dropping-texts > div:nth-child(7) { animation: roll-gap 20s linear infinite 15s; }
-    .dropping-texts > div:nth-child(8) { animation: roll-gap 20s linear infinite 17.5s; }
-    @keyframes roll-gap {
-      0% {
-        font-size:0px;
-        opacity:0;
-        margin-left:-30px;
-        margin-top:0px;
-        transform: rotate(-25deg);
-      }
-      5% {
-        opacity:1;
-        transform: rotate(0deg);
-      }
-      10% {
-        font-size:2.2rem;
-        opacity:1;
-        margin-left:0px;
-        margin-top:0px;
-      }
-      12.5% {
-        font-size:2.2rem;
-        opacity:1;
-        margin-left:0px;
-        margin-top:0px;
-        transform: rotate(0deg);
-      }
-      15% {
-        font-size:0px;
-        opacity:0;
-        margin-left:20px;
-        margin-top:100px;
-      }
-      100% {
-        font-size:0px;
-        opacity:0;
-        margin-left:-30px;
-        margin-top:0px;
-        transform: rotate(15deg);
-      }
-    }
-    /* === Skills Section === */
-    .skills-section {
-      margin-bottom: 0;
-    }
-    .skills-section h2 {
-      font-size: 2rem;
-      font-family: var(--heading-font);
-      margin-bottom: 0.5rem;
-    }
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-      margin-top: 1.25rem;
-    }
-    .skill-item {
-      background: #181818;
-      color: #7cf57c;
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      position: relative;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-    }
-    .skill-item:hover::after {
-      content: attr(data-level);
-      position: absolute;
-      left: 50%;
-      top: 110%;
-      transform: translateX(-50%);
-      background: #222;
-      color: #fff;
-      padding: 0.4rem 0.9rem;
       border-radius: 6px;
-      font-size: 0.95rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-      white-space: nowrap;
-      z-index: 3;
     }
-    .skill-item:hover {
-      background: #222;
-      color: #fff;
-    }
-    /* === Contact Section === */
-    .contact-section {
-      margin-bottom: 0;
-    }
-    .contact-section h2 {
-      font-size: 2rem;
+    .placeholder-header-box {
+      background: rgba(255,255,255,0.07);
+      border-left: 4px solid #fff;
+      padding: 0.7rem 1.2rem;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
       font-family: var(--heading-font);
-      margin-bottom: 0.5rem;
-    }
-    .contact-section p, .contact-section a {
-      font-size: 1.18rem;
-      color: #7cf57c;
-      text-decoration: none;
-    }
-    .contact-section a:hover {
       color: #fff;
-      text-decoration: underline;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+    .placeholder-paragraph-box {
+      background: rgba(255,255,255,0.04);
+      border-left: 4px solid #222;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.08rem;
+      font-family: var(--body-font);
+      color: #e0e0e0;
+      border-radius: 6px;
     }
   </style>
 </head>
@@ -311,44 +168,11 @@
       </div>
     </div>
     <div class="right-column">
-      <!-- === BEGIN: Dropping Texts Professional Title (Prismic-Style, Fixed) === -->
-      <section class="about-section">
-        <h2>About Me</h2>
-        <!--
-          DROPPING TEXTS effect:
-          - To add/remove roles, edit the <div class="dropping-texts"> below.
-          - To change animation speed, edit the animation-delay and keyframes in the CSS.
-          - To change font, edit the .dropping-texts CSS rule.
-        -->
-        <div style="display: flex; flex-direction: column; align-items: flex-start;">
-          <span class="static-title">A Professional</span>
-          <div class="dropping-texts">
-            <div>Problem Solver</div>
-            <div>Data Analyst</div>
-            <div>Software Engineer</div>
-            <div>Front-End Developer</div>
-            <div>Team Player</div>
-            <div>Critical Thinker</div>
-            <div>Placeholder 1</div>
-            <div>Placeholder 2</div>
-          </div>
-        </div>
-      </section>
-      <!-- === END: Dropping Texts Professional Title (Prismic-Style, Fixed) === -->
-      <!-- === BEGIN: Skills/Technologies Section === -->
-      <section class="skills-section">
-        <h2>Skills & Technologies</h2>
-        <div class="skills-grid">
-          <!-- Example: <div class="skill-item" data-level="Expert">Python</div> -->
-        </div>
-      </section>
-      <!-- === END: Skills/Technologies Section === -->
-      <!-- === BEGIN: Contact Section === -->
-      <section class="contact-section">
-        <h2>Contact</h2>
-        <p>Interested in working together or want to connect? <a href="contact.html">Contact me here</a>.</p>
-      </section>
-      <!-- === END: Contact Section === -->
+      <div class="placeholder-title-box">Title Box Placeholder</div>
+      <div class="placeholder-header-box">Header Box Placeholder</div>
+      <div class="placeholder-paragraph-box">Paragraph Box Placeholder</div>
+      <div class="placeholder-title-box">Another Title</div>
+      <div class="placeholder-paragraph-box">Another paragraph of placeholder text goes here. You can easily edit or duplicate these boxes as needed.</div>
     </div>
   </div>
   <script src="particles.js-loader.js"></script>
