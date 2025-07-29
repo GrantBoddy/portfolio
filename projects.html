@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume | Grant Boddy</title>
+  <title>Projects | Grant Boddy</title>
   <style>
     body {
       min-height: 100vh;
@@ -11,7 +11,7 @@
       padding: 0;
       font-family: 'Aquire', 'Arial', sans-serif;
       color: #fff;
-      background: linear-gradient(-45deg, #232526, #414345, #7cf57c, #232526);
+      background: linear-gradient(-45deg, #232526, #3a6073, #16222a, #7cf57c);
       background-size: 400% 400%;
       animation: gradientBG 18s ease infinite;
       opacity: 1;
@@ -42,7 +42,7 @@
       transition: color 0.2s;
     }
     nav a:hover { color: #fff; }
-    .resume-container {
+    .projects-container {
       margin-top: 7rem;
       max-width: 900px;
       margin-left: auto;
@@ -66,10 +66,10 @@
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <div class="resume-container">
-    <h1>Resume</h1>
+  <div class="projects-container">
+    <h1>Projects</h1>
     <h2>Section Title</h2>
-    <p>Placeholder for resume content. Add your experience, education, and skills here.</p>
+    <p>Placeholder for projects content. Add your project details here.</p>
   </div>
   <script>
     // Fade-in on load
@@ -89,7 +89,7 @@
             link.target === '_blank'
           ) return;
           e.preventDefault();
-          document.body.style.opacity = 0;
+          document.body.classList.add('fade');
           setTimeout(function() {
             window.location.href = link.href;
           }, 600);
