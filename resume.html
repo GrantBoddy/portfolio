@@ -86,6 +86,23 @@
     @media (max-width: 1000px) {
       .resume-lottie-fixed { display: none; }
     }
+    /* Lottie animation fixed on left side, hidden on mobile */
+    .resume-lottie-fixed-left {
+      position: fixed;
+      top: 50%;
+      left: 1vw;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 400px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+    @media (max-width: 1000px) {
+      .resume-lottie-fixed-left { display: none; }
+    }
     .resume-header {
       text-align: center;
       margin-top: 6.5rem;
@@ -129,6 +146,17 @@
   </div>
   <div class="resume-pdf-container">
     <iframe src="assets/resume/Resume V 2.1 PDF GREEN.pdf" width="100%" height="900px" allowfullscreen></iframe>
+  </div>
+  <!-- Lottie animation fixed on the left -->
+  <div class="resume-lottie-fixed-left">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+    <dotlottie-wc 
+      src="https://lottie.host/5559a744-c1bc-4e76-bea1-b58aef202d61/Gu7bWNRD5b.lottie" 
+      style="width: 100%; height: 100%;"
+      speed="1" 
+      autoplay 
+      loop>
+    </dotlottie-wc>
   </div>
   <!-- Lottie animation fixed on the right -->
   <div class="resume-lottie-fixed">
