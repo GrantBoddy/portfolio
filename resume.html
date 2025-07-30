@@ -48,17 +48,66 @@
     nav a:hover {
       color: #fff;
     }
+    /* Neon Glow for Resume Viewer */
     .resume-pdf-container {
       width: 100vw;
       max-width: 900px;
-      margin: 7rem auto 0 auto;
+      margin: 2.5rem auto 0 auto;
       display: flex;
       align-items: flex-start;
       justify-content: center;
       background: rgba(35,37,38,0.85);
       border-radius: 14px;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+      box-shadow: 0 0 24px 4px #7cf57c, 0 4px 32px rgba(0,0,0,0.25);
       padding: 2.5rem 2.5rem 3rem 2.5rem;
+      position: relative;
+    }
+    .resume-pdf-container iframe {
+      border-radius: 14px;
+      border: 3px solid #7cf57c;
+      box-shadow: 0 0 24px 2px #7cf57c, 0 4px 32px rgba(0,0,0,0.25);
+      background: #111;
+      transition: box-shadow 0.2s;
+    }
+    /* Lottie animation fixed on desktop, hidden on mobile */
+    .resume-lottie-fixed {
+      position: fixed;
+      top: 50%;
+      right: 3vw;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 240px;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+    @media (max-width: 1000px) {
+      .resume-lottie-fixed { display: none; }
+    }
+    .resume-header {
+      text-align: center;
+      margin-top: 6.5rem;
+      margin-bottom: 1.7rem;
+    }
+    .resume-header h1 {
+      font-size: 2.3rem;
+      color: #7cf57c;
+      margin-bottom: 0.5rem;
+      font-family: 'AquireBold', 'Aquire', Arial, sans-serif;
+    }
+    .resume-header h2 {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      font-family: 'Aquire', Arial, sans-serif;
+      font-weight: normal;
+    }
+    .resume-header p {
+      font-size: 1.05rem;
+      color: #e0e0e0;
+      margin-bottom: 0.6rem;
     }
     h1, h2, h3, h4 { font-family: 'AquireBold', 'Aquire', Arial, sans-serif; }
     h1 { font-size: 2.2rem; margin-bottom: 1.2rem; color: #7cf57c; }
@@ -73,8 +122,24 @@
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
   </nav>
+  <div class="resume-header">
+    <h1>My Resume</h1>
+    <h2>Explore my technical skills, experience, and accomplishments.</h2>
+    <p>Download below or view it right here.</p>
+  </div>
   <div class="resume-pdf-container">
-    <iframe src="assets/resume/Resume V 2.1 PDF GREEN.pdf" width="100%" height="900px" style="border-radius:14px;border:none;box-shadow:0 4px 32px rgba(0,0,0,0.25);background:#111;"></iframe>
+    <iframe src="assets/resume/Resume V 2.1 PDF GREEN.pdf" width="100%" height="900px" allowfullscreen></iframe>
+  </div>
+  <!-- Lottie animation fixed on the right -->
+  <div class="resume-lottie-fixed">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+    <dotlottie-wc 
+      src="https://lottie.host/e860c07d-c397-4bb5-bb6b-f7362bc03e63/0U78vOsVzX.lottie" 
+      style="width: 100%; height: 100%;"
+      speed="1" 
+      autoplay 
+      loop>
+    </dotlottie-wc>
   </div>
   <script>
     // Fade-in on load
