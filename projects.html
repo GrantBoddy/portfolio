@@ -30,13 +30,16 @@
     body.fade { opacity: 0; }
     nav {
       position: fixed;
-      top: 0; left: 0; width: 100vw;
+      top: 1rem;
+      right: 3rem;
+      z-index: 2;
+      font-size: 1.25rem;
+      font-family: 'Aquire', Arial, sans-serif;
       background: transparent;
-      padding: 2rem 3vw 1rem 3vw;
       display: flex;
       justify-content: flex-end;
-      gap: 2.5rem;
-      z-index: 10;
+      gap: 0;
+      padding: 0;
     }
     nav a {
       color: #7cf57c;
@@ -44,9 +47,11 @@
       font-size: 1.13rem;
       text-decoration: none;
       letter-spacing: 1.2px;
+      font-weight: bold;
+      margin-left: 1.25rem;
       transition: color 0.2s;
     }
-    nav a:hover { color: #fff; }
+    nav a:hover { color: #ffffff; }
     .projects-container {
       margin-top: 7rem;
       max-width: 900px;
