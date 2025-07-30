@@ -41,33 +41,17 @@
       transition: color 0.2s;
     }
     nav a:hover { color: #fff; }
-    .resume-container {
-      margin-top: 7rem;
+    .resume-pdf-container {
+      width: 100vw;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 7rem auto 0 auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
       background: rgba(35,37,38,0.85);
       border-radius: 14px;
       box-shadow: 0 4px 32px rgba(0,0,0,0.25);
       padding: 2.5rem 2.5rem 3rem 2.5rem;
-    }
-    .resume-img-container {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .resume-img-container img {
-      max-width: 100vw;
-      max-height: 100vh;
-      width: auto;
-      height: auto;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.25);
-      border-radius: 12px;
-      background: #111;
-      display: block;
     }
     h1, h2, h3, h4 { font-family: 'AquireBold', 'Aquire', Arial, sans-serif; }
     h1 { font-size: 2.2rem; margin-bottom: 1.2rem; color: #7cf57c; }
@@ -83,8 +67,8 @@
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <div class="resume-img-container">
-    <img src="assets/resume/Resume V 2.1 - laser green.png" alt="Grant Boddy Resume" />
+  <div class="resume-pdf-container">
+    <iframe src="assets/resume/Resume V 2.1 PDF GREEN.pdf" width="100%" height="900px" style="border-radius:14px;border:none;box-shadow:0 4px 32px rgba(0,0,0,0.25);background:#111;"></iframe>
   </div>
   <script>
     // Fade-in on load
