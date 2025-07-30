@@ -24,23 +24,30 @@
     body.fade { opacity: 0; }
     nav {
       position: fixed;
-      top: 0; left: 0; width: 100vw;
+      top: 1rem;
+      right: 3rem;
+      z-index: 2;
+      font-size: 1.25rem;
+      font-family: 'Aquire', Arial, sans-serif;
       background: transparent;
-      padding: 2rem 3vw 1rem 3vw;
       display: flex;
       justify-content: flex-end;
-      gap: 2.5rem;
-      z-index: 10;
+      gap: 0;
+      padding: 0;
     }
     nav a {
       color: #7cf57c;
+      text-decoration: none;
+      margin-left: 1.25rem;
+      font-weight: bold;
+      transition: color 0.2s;
       font-family: 'AquireBold', 'Aquire', Arial, sans-serif;
       font-size: 1.13rem;
-      text-decoration: none;
       letter-spacing: 1.2px;
-      transition: color 0.2s;
     }
-    nav a:hover { color: #fff; }
+    nav a:hover {
+      color: #fff;
+    }
     .resume-pdf-container {
       width: 100vw;
       max-width: 900px;
