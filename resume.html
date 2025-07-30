@@ -69,39 +69,24 @@
       background: #111;
       transition: box-shadow 0.2s;
     }
-    /* Lottie animation fixed on desktop, hidden on mobile */
-    .resume-lottie-fixed {
-      position: fixed;
-      top: 50%;
-      right: 1vw;
-      transform: translateY(-50%);
-      z-index: 5;
-      width: 400px;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-    }
-    @media (max-width: 1000px) {
-      .resume-lottie-fixed { display: none; }
-    }
-    /* Lottie animation fixed on left side, hidden on mobile */
+    /* Lottie animation fixed on both sides, hidden on mobile */
+    .resume-lottie-fixed,
     .resume-lottie-fixed-left {
       position: fixed;
       top: 50%;
-      left: 1vw;
       transform: translateY(-50%);
       z-index: 5;
-      width: 400px;
-      height: 400px;
+      width: 300px;
+      height: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
       pointer-events: none;
     }
+    .resume-lottie-fixed-left { left: 1vw; }
+    .resume-lottie-fixed { right: 1vw; }
     @media (max-width: 1000px) {
-      .resume-lottie-fixed-left { display: none; }
+      .resume-lottie-fixed, .resume-lottie-fixed-left { display: none; }
     }
     .resume-header {
       text-align: center;
@@ -151,7 +136,7 @@
   <div class="resume-lottie-fixed-left">
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
     <dotlottie-wc 
-      src="https://lottie.host/5559a744-c1bc-4e76-bea1-b58aef202d61/Gu7bWNRD5b.lottie" 
+      src="https://lottie.host/1bab4f33-759d-4b84-abc8-4e8e27bfc053/vcCxHOGEa2.lottie" 
       style="width: 100%; height: 100%;"
       speed="1" 
       autoplay 
@@ -162,7 +147,7 @@
   <div class="resume-lottie-fixed">
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
     <dotlottie-wc 
-      src="https://lottie.host/e860c07d-c397-4bb5-bb6b-f7362bc03e63/0U78vOsVzX.lottie" 
+      src="https://lottie.host/1bab4f33-759d-4b84-abc8-4e8e27bfc053/vcCxHOGEa2.lottie" 
       style="width: 100%; height: 100%;"
       speed="1" 
       autoplay 
