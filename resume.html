@@ -209,78 +209,45 @@
         0 0 12px #7cf57c;
     }
     .devkit-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 3.2rem;
-      margin-bottom: 4.5rem;
-    }
-    .devkit-header h1 {
-      font-family: 'AquireBold', 'Aquire', Arial, sans-serif;
-      font-size: 3.1rem;
-      color: #000;
-      text-shadow: 0 0 8px #7cf57c, 0 0 24px #7cf57c;
-      margin-bottom: 0.7rem;
-      letter-spacing: 1.5px;
-    }
-    .devkit-header h2 {
-      font-family: 'Aquire', Arial, sans-serif;
-      font-size: 1.44rem;
-      color: #000;
-      text-shadow: 0 0 4px #7cf57c, 0 0 12px #7cf57c;
-      margin-bottom: 0.5rem;
-      letter-spacing: 1.1px;
-    }
-    .devkit-header p {
-      font-family: 'Aquire', Arial, sans-serif;
-      font-size: 1.13rem;
-      color: #000;
-      text-shadow: 0 0 4px #7cf57c;
-      margin-bottom: 0;
-      letter-spacing: 0.5px;
-    }
-    /* Sticker mockup style for header */
-    .sticker-mockup {
-      background: #fffbe8;
-      border: 4px solid #fff;
-      border-radius: 38% 62% 61% 39% / 48% 38% 62% 52%; /* organic sticker shape */
-      box-shadow:
-        0 6px 32px 0 #7cf57c88,
-        0 2px 16px 0 #00000033,
-        0 0 0 8px #fffbe8;
-      padding: 2.7rem 2.2rem 2.3rem 2.2rem;
+      background: #000;
+      border-radius: 1.6rem;
+      padding: 3.2rem 2.4rem 2.7rem 2.4rem;
       margin-top: 3.2rem;
       margin-bottom: 4.5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width: 650px;
+      max-width: 680px;
       margin-left: auto;
       margin-right: auto;
-      position: relative;
-      z-index: 1;
-      animation: sticker-pop 0.8s cubic-bezier(.45,1.8,.45,1) 1;
+      box-shadow: 0 6px 32px 0 #111a, 0 2px 16px 0 #7cf57c44;
     }
-    @keyframes sticker-pop {
-      0% { transform: scale(0.7) rotate(-3deg); opacity: 0; box-shadow: none; }
-      80% { transform: scale(1.06) rotate(2deg); opacity: 1; }
-      100% { transform: scale(1) rotate(-1deg); opacity: 1; }
+    .devkit-header h1, .devkit-header h2, .devkit-header p {
+      text-align: center;
+      color: #7cf57c;
+      text-shadow: 0 0 14px #fff, 0 0 32px #fff;
+      margin: 0 0 1.1rem 0;
     }
-    .sticker-mockup h1, .sticker-mockup h2, .sticker-mockup p {
-      color: #000;
-      text-shadow: 0 0 8px #7cf57c, 0 0 24px #7cf57c;
+    .devkit-header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.1rem;
     }
-    .sticker-mockup h1 {
-      font-size: 3.2rem;
-      margin-bottom: 0.7rem;
+    .devkit-header h2 {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
     }
-    .sticker-mockup h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .sticker-mockup p {
-      font-size: 1.15rem;
+    .devkit-header p {
+      font-size: 1.3rem;
       margin-bottom: 0;
+    }
+    /* Animated white glow */
+    @keyframes glow {
+      0% { text-shadow: 0 0 14px #fff, 0 0 32px #fff; }
+      50% { text-shadow: 0 0 24px #fff, 0 0 48px #fff; }
+      100% { text-shadow: 0 0 14px #fff, 0 0 32px #fff; }
+    }
+    .devkit-animated {
+      animation: glow 2s infinite;
     }
   </style>
 </head>
@@ -290,10 +257,10 @@
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <div class="devkit-header sticker-mockup">
-    <h1>Dev Kit: Grant Edition</h1>
-    <h2>My Resume, Cover Letter, &amp; References all in 1 place</h2>
-    <p>Feel Free to View here, or download &amp; send it to everyone you know</p>
+  <div class="devkit-header">
+    <h1 class="devkit-animated">Dev Kit: Grant Edition</h1>
+    <h2 class="devkit-animated">My Resume, Cover Letter, &amp; References all in 1 place</h2>
+    <p class="devkit-animated">Feel Free to View here, or download &amp; send it to everyone you know</p>
   </div>
   <div class="resume-header">
     <h1>My Resume</h1>
