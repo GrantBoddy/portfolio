@@ -130,6 +130,46 @@
     h2 { font-size: 1.4rem; margin-bottom: 0.7rem; color: #000000; }
     p, li { font-size: 1.07rem; color: #666666; }
     ul { margin-bottom: 1.5rem; }
+    .resume-download-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .resume-download-section h3 {
+      font-family: 'AquireBold', 'Aquire', Arial, sans-serif;
+      font-size: 1.32rem;
+      margin-bottom: 1.1rem;
+      color: #000;
+      letter-spacing: 1.1px;
+      text-shadow: 0 0 8px #7cf57c, 0 0 18px #7cf57c;
+    }
+    .resume-download-buttons {
+      display: flex;
+      gap: 1.7rem;
+    }
+    .download-btn {
+      display: inline-block;
+      padding: 0.85em 2.2em;
+      font-family: 'AquireBold', 'Aquire', Arial, sans-serif;
+      font-size: 1.11rem;
+      color: #fff;
+      background: #111;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 0 12px 3px #7cf57c, 0 2px 12px rgba(0,0,0,0.18);
+      text-decoration: none;
+      letter-spacing: 1.2px;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      text-align: center;
+      margin-top: 0;
+    }
+    .download-btn:hover, .download-btn:focus {
+      background: #7cf57c;
+      color: #111;
+      box-shadow: 0 0 24px 6px #7cf57c, 0 4px 24px rgba(0,0,0,0.18);
+    }
   </style>
 </head>
 <body>
@@ -145,6 +185,14 @@
   </div>
   <div class="resume-pdf-container">
     <iframe src="assets/resume/Grant Boddy's Resume PDF.pdf" width="100%" height="900px" allowfullscreen></iframe>
+  </div>
+  <!-- Download links section -->
+  <div class="resume-download-section">
+    <h3>Download My Resume</h3>
+    <div class="resume-download-buttons">
+      <a href="assets/resume/Grant Boddy's Resume PDF.pdf" download class="download-btn">Download PDF</a>
+      <a href="assets/resume/Grant Boddy's Resume PNG.png" download class="download-btn">Download PNG</a>
+    </div>
   </div>
   <!-- Lottie animation fixed on the left -->
   <div class="resume-lottie-fixed-left">
