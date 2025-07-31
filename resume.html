@@ -239,6 +239,49 @@
       margin-bottom: 0;
       letter-spacing: 0.5px;
     }
+    /* Sticker mockup style for header */
+    .sticker-mockup {
+      background: #fffbe8;
+      border: 4px solid #fff;
+      border-radius: 38% 62% 61% 39% / 48% 38% 62% 52%; /* organic sticker shape */
+      box-shadow:
+        0 6px 32px 0 #7cf57c88,
+        0 2px 16px 0 #00000033,
+        0 0 0 8px #fffbe8;
+      padding: 2.7rem 2.2rem 2.3rem 2.2rem;
+      margin-top: 3.2rem;
+      margin-bottom: 4.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+      animation: sticker-pop 0.8s cubic-bezier(.45,1.8,.45,1) 1;
+    }
+    @keyframes sticker-pop {
+      0% { transform: scale(0.7) rotate(-3deg); opacity: 0; box-shadow: none; }
+      80% { transform: scale(1.06) rotate(2deg); opacity: 1; }
+      100% { transform: scale(1) rotate(-1deg); opacity: 1; }
+    }
+    .sticker-mockup h1, .sticker-mockup h2, .sticker-mockup p {
+      color: #000;
+      text-shadow: 0 0 8px #7cf57c, 0 0 24px #7cf57c;
+    }
+    .sticker-mockup h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.7rem;
+    }
+    .sticker-mockup h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .sticker-mockup p {
+      font-size: 1.15rem;
+      margin-bottom: 0;
+    }
   </style>
 </head>
 <body>
@@ -247,7 +290,7 @@
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <div class="devkit-header">
+  <div class="devkit-header sticker-mockup">
     <h1>Dev Kit: Grant Edition</h1>
     <h2>My Resume, Cover Letter, &amp; References all in 1 place</h2>
     <p>Feel Free to View here, or download &amp; send it to everyone you know</p>
