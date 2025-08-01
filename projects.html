@@ -6,39 +6,48 @@
   <title>Projects | Grant Boddy</title>
   <style>
     @font-face {
-      font-family: 'Aquire';
-      src: url('assets/fonts/Aquire-BW0ox.otf') format('opentype');
+      font-family: 'Moonhouse';
+      src: url('assets/fonts/Moonhouse-yE5M.ttf') format('truetype');
       font-weight: normal;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'AquireBold';
-      src: url('assets/fonts/AquireBold-BW0ox.otf') format('opentype');
-      font-weight: bold;
       font-style: normal;
     }
     body {
       min-height: 100vh;
       margin: 0;
       padding: 0;
-      font-family: 'Aquire', 'Arial', sans-serif;
-      color: #fff;
-      /* Multi-layered gradient for depth and movement */
-      background: #000;
-      background-blend-mode: lighten, normal;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      opacity: 1;
-      transition: opacity 0.6s;
+      font-family: 'Moonhouse', 'Aquire', Arial, sans-serif;
+      color: #D6D6D6;
+      background: #2C2B30;
+      position: relative;
+      overflow-x: hidden;
     }
-    body.fade { opacity: 0; }
+    /* Funky blobs background */
+    .blob-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .blob {
+      position: absolute;
+      filter: blur(2px) brightness(1.08);
+      opacity: 0.68;
+      mix-blend-mode: lighten;
+      z-index: 0;
+    }
+    /* Example funky blob shapes */
+    .blob1 { left: -8vw; top: 12vh; width: 32vw; height: 32vw; background: radial-gradient(circle at 60% 40%, #F2C4CE 60%, #F58F7C 100%); border-radius: 55% 45% 60% 40%/50% 60% 40% 50%; transform: rotate(-12deg); }
+    .blob2 { right: -10vw; top: 0vh; width: 28vw; height: 30vw; background: radial-gradient(circle at 40% 60%, #F58F7C 60%, #2C2B30 100%); border-radius: 60% 40% 45% 55%/50% 60% 40% 50%; transform: rotate(22deg); }
+    .blob3 { left: 40vw; top: 60vh; width: 38vw; height: 30vw; background: radial-gradient(circle at 70% 30%, #F2C4CE 55%, #4F4F51 100%); border-radius: 45% 55% 50% 50%/60% 40% 60% 40%; transform: rotate(-8deg); }
+    .blob4 { left: 65vw; top: 75vh; width: 22vw; height: 20vw; background: radial-gradient(circle at 60% 60%, #F58F7C 60%, #D6D6D6 100%); border-radius: 60% 40% 60% 40%/55% 45% 55% 45%; transform: rotate(16deg); }
     nav {
       position: fixed;
       top: 1rem;
       right: 3rem;
       z-index: 2;
       font-size: 1.25rem;
-      font-family: 'Aquire', Arial, sans-serif;
+      font-family: 'Moonhouse', Arial, sans-serif;
       background: transparent;
       display: flex;
       justify-content: flex-end;
@@ -46,8 +55,8 @@
       padding: 0;
     }
     nav a {
-      color: #7cf57c;
-      font-family: 'AquireBold', 'Aquire', Arial, sans-serif;
+      color: #F58F7C;
+      font-family: 'Moonhouse', Arial, sans-serif;
       font-size: 1.13rem;
       text-decoration: none;
       letter-spacing: 1.2px;
@@ -56,21 +65,6 @@
       transition: color 0.2s;
     }
     nav a:hover { color: #ffffff; }
-    .projects-container {
-      margin-top: 7rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      background: rgba(35,37,38,0.85);
-      border-radius: 14px;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.25);
-      padding: 2.5rem 2.5rem 3rem 2.5rem;
-    }
-    h1, h2, h3, h4 { font-family: 'AquireBold', 'Aquire', Arial, sans-serif; }
-    h1 { font-size: 2.2rem; margin-bottom: 1.2rem; color: #7cf57c; }
-    h2 { font-size: 1.4rem; margin-bottom: 0.7rem; color: #fff; }
-    p, li { font-size: 1.07rem; color: #e0e0e0; font-family: 'Aquire', Arial, sans-serif; }
-    ul { margin-bottom: 1.5rem; }
     .projects-main {
       display: flex;
       flex-direction: column;
@@ -80,25 +74,29 @@
       width: 100%;
       margin: 0 auto;
       padding: 0;
+      position: relative;
+      z-index: 1;
     }
     .projects-title {
-      margin-top: 9rem;
+      margin-top: 8rem;
       margin-bottom: 0.7rem;
       font-size: 3.2rem;
-      color: #7cf57c;
-      font-family: 'AquireBold', 'Aquire', Arial, sans-serif;
-      letter-spacing: 1.5px;
+      color: #F58F7C;
+      font-family: 'Moonhouse', Arial, sans-serif;
+      letter-spacing: 2px;
       text-align: center;
+      text-shadow: 0 2px 18px #2C2B30aa;
     }
     .projects-subtitle {
       margin-top: 2rem;
       margin-bottom: 4.5rem;
       font-size: 1.6rem;
-      color: #fff;
-      font-family: 'Aquire', Arial, sans-serif;
+      color: #F2C4CE;
+      font-family: 'Moonhouse', Arial, sans-serif;
       font-weight: normal;
       text-align: center;
       max-width: 700px;
+      text-shadow: 0 2px 10px #2C2B3088;
     }
     .projects-grid {
       display: grid;
@@ -107,23 +105,28 @@
       width: 100%;
       max-width: 1200px;
       margin: 0 auto 3.5rem auto;
+      z-index: 1;
     }
     .project-card {
-      background: rgba(24,25,27,0.97);
-      border-radius: 20px;
-      box-shadow: 0 6px 32px rgba(0,0,0,0.20);
+      background: rgba(76, 76, 81, 0.55);
+      border-radius: 24px;
+      box-shadow: 0 8px 36px 0 #2C2B3040, 0 1.5px 8px #F2C4CE22;
       padding: 2.6rem 1.6rem 2.3rem 1.6rem;
       text-align: center;
-      border: 2.5px solid #7cf57c;
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      border: 2.5px solid #F2C4CE;
+      transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s, background 0.18s;
       display: flex;
       flex-direction: column;
       align-items: center;
+      backdrop-filter: blur(9px) saturate(1.05);
+      -webkit-backdrop-filter: blur(9px) saturate(1.05);
+      z-index: 1;
     }
     .project-card:hover {
       transform: translateY(-10px) scale(1.045);
-      box-shadow: 0 10px 36px #7cf57c44;
-      border-color: #7cf57c;
+      box-shadow: 0 16px 48px #F58F7C44, 0 2px 12px #2C2B3088;
+      border-color: #F58F7C;
+      background: rgba(242,196,206,0.18);
     }
     .project-card img {
       width: 100%;
@@ -131,29 +134,31 @@
       height: 220px;
       object-fit: cover;
       margin-bottom: 1.7rem;
-      border-radius: 12px;
-      background: #111;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.15);
-      border: 2.5px solid #222;
+      border-radius: 14px;
+      background: #4F4F51;
+      box-shadow: 0 2px 18px rgba(44,43,48,0.18);
+      border: 2.5px solid #D6D6D6;
     }
     .project-card h3 {
-      font-size: 1.55rem;
-      color: #7cf57c;
+      font-size: 1.65rem;
+      color: #F58F7C;
       margin-bottom: 1.1rem;
-      font-family: 'AquireBold', 'Aquire', Arial, sans-serif;
+      font-family: 'Moonhouse', Arial, sans-serif;
+      letter-spacing: 1.3px;
     }
     .project-card p {
-      color: #e0e0e0;
-      font-size: 1.19rem;
-      font-family: 'Aquire', Arial, sans-serif;
+      color: #D6D6D6;
+      font-size: 1.22rem;
+      font-family: 'Moonhouse', Arial, sans-serif;
       margin: 0;
+      text-shadow: 0 1px 4px #2C2B3088;
     }
     @media (max-width: 900px) {
       .projects-grid {
         grid-template-columns: 1fr 1fr;
       }
       .project-card img {
-        height: 180px;
+        height: 170px;
       }
     }
     @media (max-width: 600px) {
@@ -169,12 +174,18 @@
         margin-bottom: 2.5rem;
       }
       .project-card img {
-        height: 140px;
+        height: 110px;
       }
     }
   </style>
 </head>
 <body>
+  <div class="blob-bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="blob blob4"></div>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <a href="resume.html">Career Kit</a>
@@ -185,17 +196,17 @@
     <h2 class="projects-subtitle">Welcome! Here you'll find a selection of my technical and creative projects. Each card below showcases a project—click to learn more as I add details!</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <img src="assets/images/coming soon.png" alt="Project 1 Thumbnail">
+        <img src="assets/images/project1.png" alt="Project 1 Thumbnail">
         <h3>Project 1</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.</p>
       </div>
       <div class="project-card">
-        <img src="assets/images/coming soon.png" alt="Project 2 Thumbnail">
+        <img src="assets/images/project2.png" alt="Project 2 Thumbnail">
         <h3>Project 2</h3>
         <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
       </div>
       <div class="project-card">
-        <img src="assets/images/coming soon.png" alt="Project 3 Thumbnail">
+        <img src="assets/images/project3.png" alt="Project 3 Thumbnail">
         <h3>Project 3</h3>
         <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
       </div>
