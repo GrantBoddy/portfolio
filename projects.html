@@ -183,6 +183,54 @@
         height: 110px;
       }
     }
+    /* --- Animated Blobs Keyframes --- */
+    @keyframes blob1move {
+      0%   { transform: translate(0,0) scale(1,1) rotate(-12deg); border-radius: 55% 45% 60% 40%/50% 60% 40% 50%; }
+      25%  { transform: translate(10px, -20px) scale(1.07,0.95) rotate(-8deg); border-radius: 60% 40% 55% 45%/45% 65% 35% 55%; }
+      50%  { transform: translate(-10px, 10px) scale(0.97,1.05) rotate(-15deg); border-radius: 50% 50% 60% 40%/60% 40% 50% 50%; }
+      75%  { transform: translate(12px, -8px) scale(1.04,0.98) rotate(-10deg); border-radius: 58% 42% 62% 38%/52% 62% 38% 48%; }
+      100% { transform: translate(0,0) scale(1,1) rotate(-12deg); border-radius: 55% 45% 60% 40%/50% 60% 40% 50%; }
+    }
+    @keyframes blob2move {
+      0%   { transform: translate(0,0) scale(1,1) rotate(22deg); border-radius: 60% 40% 45% 55%/50% 60% 40% 50%; }
+      25%  { transform: translate(-12px, 18px) scale(1.06,0.93) rotate(20deg); border-radius: 65% 35% 50% 50%/55% 65% 35% 45%; }
+      50%  { transform: translate(12px, -10px) scale(0.94,1.08) rotate(27deg); border-radius: 58% 42% 48% 52%/60% 40% 60% 40%; }
+      75%  { transform: translate(-8px, 10px) scale(1.03,0.99) rotate(24deg); border-radius: 62% 38% 55% 45%/48% 62% 38% 52%; }
+      100% { transform: translate(0,0) scale(1,1) rotate(22deg); border-radius: 60% 40% 45% 55%/50% 60% 40% 50%; }
+    }
+    @keyframes blob3move {
+      0%   { transform: translate(0,0) scale(1,1) rotate(-8deg); border-radius: 45% 55% 50% 50%/60% 40% 60% 40%; }
+      25%  { transform: translate(14px, 10px) scale(1.05,0.97) rotate(-11deg); border-radius: 50% 50% 55% 45%/55% 45% 65% 35%; }
+      50%  { transform: translate(-10px, -12px) scale(0.98,1.03) rotate(-6deg); border-radius: 48% 52% 52% 48%/62% 38% 58% 42%; }
+      75%  { transform: translate(8px, 14px) scale(1.02,1.01) rotate(-10deg); border-radius: 52% 48% 50% 50%/58% 42% 62% 38%; }
+      100% { transform: translate(0,0) scale(1,1) rotate(-8deg); border-radius: 45% 55% 50% 50%/60% 40% 60% 40%; }
+    }
+    @keyframes blob4move {
+      0%   { transform: translate(0,0) scale(1,1) rotate(16deg); border-radius: 60% 40% 60% 40%/55% 45% 55% 45%; }
+      25%  { transform: translate(-14px, 8px) scale(1.08,0.95) rotate(12deg); border-radius: 65% 35% 55% 45%/60% 40% 50% 50%; }
+      50%  { transform: translate(10px, -14px) scale(0.92,1.07) rotate(20deg); border-radius: 58% 42% 62% 38%/52% 62% 38% 48%; }
+      75%  { transform: translate(-12px, 10px) scale(1.04,0.98) rotate(18deg); border-radius: 62% 38% 58% 42%/48% 58% 42% 52%; }
+      100% { transform: translate(0,0) scale(1,1) rotate(16deg); border-radius: 60% 40% 60% 40%/55% 45% 55% 45%; }
+    }
+    .blob1 { animation: blob1move 18s ease-in-out infinite; }
+    .blob2 { animation: blob2move 22s ease-in-out infinite; }
+    .blob3 { animation: blob3move 20s ease-in-out infinite; }
+    .blob4 { animation: blob4move 24s ease-in-out infinite; }
+    /* --- Cursor Light --- */
+    .cursor-light {
+      position: fixed;
+      top: 0; left: 0;
+      width: 52px; height: 52px;
+      margin-left: -26px; margin-top: -26px;
+      pointer-events: none;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff 0%, #fff8 60%, #fff0 100%);
+      box-shadow: 0 0 32px 8px #fff8, 0 0 0 0 #fff0;
+      opacity: 0.7;
+      z-index: 10000;
+      transition: opacity 0.2s;
+      will-change: transform;
+    }
   </style>
 </head>
 <body>
@@ -192,6 +240,7 @@
     <div class="blob blob3"></div>
     <div class="blob blob4"></div>
   </div>
+  <div class="cursor-light" id="cursorLight"></div>
   <nav>
     <a href="index.html">Home</a>
     <a href="resume.html">Career Kit</a>
@@ -242,6 +291,15 @@
           }, 600);
         });
       }
+    });
+    // --- Cursor-following light effect ---
+    const cursorLight = document.getElementById('cursorLight');
+    document.addEventListener('mousemove', function(e) {
+      cursorLight.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      cursorLight.style.opacity = 0.7;
+    });
+    document.addEventListener('mouseleave', function() {
+      cursorLight.style.opacity = 0;
     });
   </script>
 </body>
