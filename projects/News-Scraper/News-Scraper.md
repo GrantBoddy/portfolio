@@ -3,6 +3,7 @@ title: "QA Wolf Take-Home: News Scraper"
 date: 2025-08-02
 thumbnail: "/projects/QA_Wolf_Take_Home/wolf_art-thumbnail.png"
 tags: ["Node.js", "Playwright", "CLI", "Web Scraping", "Data Visualization", "QA"]
+layout: project.njk
 github: "https://github.com/GrantBoddy/QA_Wolf_Take_Home"
 demo: ""
 ---
@@ -83,10 +84,17 @@ QA Wolf Take-Home is a fully interactive CLI tool that patrols the front page of
 
 ## 🖼️ Screenshots & Visuals
 
-![Wolf CLI Art](/projects/QA_Wolf_Take_Home/wolf_art.png)  
-![Terminal Menu](/projects/QA_Wolf_Take_Home/menu.png)  
-![Charts Example](/projects/QA_Wolf_Take_Home/charts.png)  
-*(Add your own screenshots here!)*
+![Screenshot 1](/projects/News-Scraper/images/screenshot-1.png)  
+![Screenshot 2](/projects/News-Scraper/images/screenshot-2.png)  
+![Screenshot 3](/projects/News-Scraper/images/screenshot-3.png)  
+![Screenshot 4](/projects/News-Scraper/images/screenshot-4.png)  
+![Screenshot 5](/projects/News-Scraper/images/screenshot-5.png)  
+![Screenshot 6](/projects/News-Scraper/images/screenshot-6.png)  
+![Screenshot 7](/projects/News-Scraper/images/screenshot-7.png)  
+![Screenshot 8](/projects/News-Scraper/images/screenshot-8.png)  
+![Screenshot 9](/projects/News-Scraper/images/screenshot-9.png)  
+![Screenshot 10](/projects/News-Scraper/images/screenshot-10.png)  
+![Screenshot 11](/projects/News-Scraper/images/screenshot-11.png)
 
 ---
 
