@@ -1,9 +1,9 @@
 ---
+layout: project.njk
 title: "QA Wolf Take-Home: News Scraper"
 date: 2025-08-02
 thumbnail: "/projects/QA_Wolf_Take_Home/wolf_art-thumbnail.png"
 tags: ["Node.js", "Playwright", "CLI", "Web Scraping", "Data Visualization", "QA"]
-layout: project.njk
 github: "https://github.com/GrantBoddy/QA_Wolf_Take_Home"
 demo: ""
 ---

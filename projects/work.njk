@@ -268,21 +268,17 @@
       So please, click on a project, peek into my brain, <br>
       and let the digital adventures begin.</h2>
     <div class="projects-grid">
-      <div class="project-card">
-        <img src="assets/images/coming-soon-2.png" alt="Project 1 Thumbnail">
-        <h3>Project 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.</p>
-      </div>
-      <div class="project-card">
-        <img src="assets/images/coming-soon-2.png" alt="Project 2 Thumbnail">
-        <h3>Project 2</h3>
-        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-      </div>
-      <div class="project-card">
-        <img src="assets/images/coming-soon-2.png" alt="Project 3 Thumbnail">
-        <h3>Project 3</h3>
-        <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
-      </div>
+      {% for project in collections.all %}
+        {% if project.url != '/work/' and project.url != '/' %}
+          <div class="project-card">
+            <a href="{{ project.url }}">
+              <img src="{{ project.data.thumbnail or 'assets/images/coming-soon-2.png' }}" alt="{{ project.data.title }} Thumbnail">
+              <h3>{{ project.data.title }}</h3>
+            </a>
+            <p>{{ project.data.description or project.templateContent | striptags | truncate(120, true, '...') }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
   </main>
   <script>

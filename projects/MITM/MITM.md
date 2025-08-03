@@ -1,9 +1,9 @@
 ---
+layout: project.njk
 title: "Murder In The Mansion"
 date: 2025-08-01
 thumbnail: "/projects/MITM/images-thumbnail.png"
 tags: ["Python", "PyGame", "Game", "Arcade Game"]
-layout: project.njk
 github: "https://github.com/GrantBoddy/MurderInTheMansion"
 demo: "https://project-demo-link.com"
 ---
