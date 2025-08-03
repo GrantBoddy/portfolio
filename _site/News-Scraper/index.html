@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QA Wolf Take-Home: News Scraper</title>
+</head>
+<body>
+  <h1>QA Wolf Take-Home: News Scraper</h1>
+  <article>
+    <h2>Tagline</h2>
+<p>🐺 <strong>QA Wolf News Scraper</strong><br>
+A terminal adventure in web scraping, data analysis, and QA automation — with a wolfish sense of humor.</p>
+<hr>
+<h2>Overview</h2>
+<p>QA Wolf Take-Home is a fully interactive CLI tool that patrols the front page of Hacker News, validating its sort order, analyzing trends, and letting users explore the data through playful and powerful terminal features.</p>
+<ul>
+<li><strong>Automated web scraping</strong> of Hacker News (100 newest posts)</li>
+<li><strong>QA validation</strong>: Checks if posts are truly sorted by publish time</li>
+<li><strong>Data export</strong>: Instantly save results as CSV or JSON</li>
+<li><strong>Interactive charts</strong>: Visualize domains, categories, and word frequencies in your browser</li>
+<li><strong>Multiple modes</strong>: Choose between a serious QA experience or a “fun” mode with stats, jokes, and surprises</li>
+</ul>
+<hr>
+<h2>🧭 Main Features</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sorting Validation</strong></td>
+<td>Scrapes 100 HN articles and checks if they're sorted by timestamp</td>
+</tr>
+<tr>
+<td><strong>Normal &amp; Fun QA Modes</strong></td>
+<td>Choose between standard QA stats or playful, quirky analysis</td>
+</tr>
+<tr>
+<td><strong>Data Export</strong></td>
+<td>Save your crawl as CSV or JSON for further analysis</td>
+</tr>
+<tr>
+<td><strong>Interactive CLI Menu</strong></td>
+<td>Navigate features with a sleek, colorful terminal menu</td>
+</tr>
+<tr>
+<td><strong>Charts &amp; Visuals</strong></td>
+<td>View your data in beautiful charts (launches a local web server)</td>
+</tr>
+<tr>
+<td><strong>Browser Preview</strong></td>
+<td>Instantly open results in your browser for easy review</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>How It Works</h2>
+<ol>
+<li><strong>Launch the CLI</strong><br>
+The program greets you with custom ASCII wolf art and a menu.</li>
+<li><strong>Automated Scraping</strong><br>
+Uses Playwright to launch a browser, paginate through Hacker News, and collect 100 articles.</li>
+<li><strong>Sorting Validation</strong><br>
+Parses timestamps and checks if the articles are sorted from newest to oldest.</li>
+<li><strong>Stats &amp; Analysis</strong>
+<ul>
+<li>Normal Mode: Presents clean stats (article counts, domain diversity, busiest posting times, etc.)</li>
+<li>Fun Mode: Adds playful metrics (clickbaitiest headline, domain oddities, and more)</li>
+</ul>
+</li>
+<li><strong>Export &amp; Visualize</strong>
+<ul>
+<li>Export results as CSV/JSON</li>
+<li>Launch a local server to view interactive charts (React + Vite frontend)</li>
+<li>Open raw results in your browser</li>
+</ul>
+</li>
+<li><strong>All from the Terminal</strong><br>
+Every feature is accessible from a single, interactive terminal menu.</li>
+</ol>
+<hr>
+<h2>🛠️ Tech Stack &amp; Architecture</h2>
+<ul>
+<li><strong>Node.js</strong> (ESM modules)</li>
+<li><strong>Playwright</strong> for browser automation &amp; scraping</li>
+<li><strong>Inquirer</strong> for interactive CLI menus</li>
+<li><strong>Chalk</strong> for colorful terminal output</li>
+<li><strong>Open</strong> for launching browsers/files</li>
+<li><strong>React + Vite</strong> (in <code>react-wolf-results/</code>) for data visualization</li>
+<li><strong>Custom CSV/JSON utilities</strong> for data handling</li>
+<li><strong>ASCII art</strong> for branding and fun</li>
+</ul>
+<hr>
+<h2>🐾 Unique Touches</h2>
+<ul>
+<li><strong>Fun Mode</strong>: Stats with personality! Get the “clickbaitiest” headline, domain weirdness, and even wolf howls.</li>
+<li><strong>Wolf Branding</strong>: Custom ASCII art and playful copy throughout.</li>
+<li><strong>Seamless Data Flow</strong>: From scraping to export to visualization, all in one workflow.</li>
+<li><strong>Robust QA Logic</strong>: Validates sort order, handles pagination, and deals with missing data gracefully.</li>
+</ul>
+<hr>
+<h2>🖼️ Screenshots &amp; Visuals</h2>
+<p><img src="/projects/News-Scraper/images/screenshot-1.png" alt="Screenshot 1"><br>
+<img src="/projects/News-Scraper/images/screenshot-2.png" alt="Screenshot 2"><br>
+<img src="/projects/News-Scraper/images/screenshot-3.png" alt="Screenshot 3"><br>
+<img src="/projects/News-Scraper/images/screenshot-4.png" alt="Screenshot 4"><br>
+<img src="/projects/News-Scraper/images/screenshot-5.png" alt="Screenshot 5"><br>
+<img src="/projects/News-Scraper/images/screenshot-6.png" alt="Screenshot 6"><br>
+<img src="/projects/News-Scraper/images/screenshot-7.png" alt="Screenshot 7"><br>
+<img src="/projects/News-Scraper/images/screenshot-8.png" alt="Screenshot 8"><br>
+<img src="/projects/News-Scraper/images/screenshot-9.png" alt="Screenshot 9"><br>
+<img src="/projects/News-Scraper/images/screenshot-10.png" alt="Screenshot 10"><br>
+<img src="/projects/News-Scraper/images/screenshot-11.png" alt="Screenshot 11"></p>
+<hr>
+<h2>Lessons Learned &amp; Challenges</h2>
+<ul>
+<li><strong>Browser automation quirks</strong>: Handling dynamic content and pagination on Hacker News</li>
+<li><strong>Data integrity</strong>: Ensuring no duplicates and robust timestamp parsing</li>
+<li><strong>User experience</strong>: Balancing technical QA features with playful, engaging UX</li>
+<li><strong>Separation of concerns</strong>: Cleanly splitting scraping, analysis, and visualization logic</li>
+</ul>
+<hr>
+<h2>📚 Documentation</h2>
+<ul>
+<li><a href="https://github.com/GrantBoddy/QA_Wolf_Take_Home">GitHub Repository</a></li>
+<li>See included <a href="cci:7://file:///c:/Users/17707/Desktop/QA_Wolf_Take_Home/README.md:0:0-0:0">README.md</a> for install and usage instructions</li>
+</ul>
+<hr>
+<h2>Links</h2>
+<p>[Button] 🐺 GitHub Repository<br>
+[Button] 📊 Download &amp; Explore</p>
+<hr>
+
+  </article>
+</body>
+</html>

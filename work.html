@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Grant Boddy</title>
+  <style>
+    @font-face {
+      font-family: 'Moonhouse';
+      src: url('assets/fonts/BraveEightyoneRegular-ZVGvm.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'TimeburnerBold';
+      src: url('assets/fonts/TimeburnerBold-peGR.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'Moonhouse', 'Aquire', Arial, sans-serif;
+      color: #D6D6D6;
+      background: #2C2B30;
+      position: relative;
+      overflow-x: hidden;
+    }
+    /* Funky blobs background */
+    .blob-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .blob {
+      position: absolute;
+      filter: blur(2px) brightness(1.08);
+      opacity: 0.68;
+      mix-blend-mode: lighten;
+      z-index: 0;
+    }
+    /* Example funky blob shapes */
+    .blob1 { left: -8vw; top: 12vh; width: 32vw; height: 32vw; background: radial-gradient(circle at 60% 40%, #F58F7C 60%, #F58F7C 100%); border-radius: 55% 45% 60% 40%/50% 60% 40% 50%; transform: rotate(-12deg); }
+    .blob2 { right: -10vw; top: 20vh; width: 34vw; height: 20vw; background: radial-gradient(circle at 40% 60%, #F2C4CE 60%, #2C2B30 100%); border-radius: 60% 40% 45% 55%/50% 60% 40% 50%; transform: rotate(22deg); }
+    .blob3 { left: 15vw; top: 80vh; width: 44vw; height: 30vw; background: radial-gradient(circle at 70% 30%, #F2C4CE 55%, #4F4F51 100%); border-radius: 45% 55% 50% 50%/60% 40% 60% 40%; transform: rotate(-8deg); }
+    .blob4 { left: 65vw; top: 75vh; width: 22vw; height: 20vw; background: radial-gradient(circle at 60% 60%, #F58F7C 60%, #D6D6D6 100%); border-radius: 60% 40% 60% 40%/55% 45% 55% 45%; transform: rotate(16deg); }
+    nav {
+      position: fixed;
+      top: 1rem;
+      right: 3rem;
+      z-index: 2;
+      font-size: 1.25rem;
+      font-family: 'Moonhouse', Arial, sans-serif;
+      background: transparent;
+      display: flex;
+      justify-content: flex-end;
+      gap: 0;
+      padding: 0;
+    }
+    nav a {
+      color: #F58F7C;
+      font-family: 'Moonhouse', Arial, sans-serif;
+      font-size: 1.13rem;
+      text-decoration: none;
+      letter-spacing: 1.2px;
+      font-weight: bold;
+      margin-left: 1.25rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #ffffff; }
+    .projects-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 80vh;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .projects-title {
+      margin-top: 8rem;
+      margin-bottom: 0.7rem;
+      font-size: 3.2rem;
+      color: #F2C4CE;
+      font-family: 'Moonhouse', Arial, sans-serif;
+      letter-spacing: 2px;
+      text-align: center;
+      text-shadow: 0 2px 18px #2C2B30aa;
+    }
+    .projects-subtitle {
+      margin-top: 2rem;
+      margin-bottom: 4.5rem;
+      font-size: 1.32rem;
+      color: #F58F7C;
+      font-family: 'TimeburnerBold', Arial, sans-serif;
+      font-weight: normal;
+      text-align: center;
+      max-width: 1100px;
+      width: 90vw;
+      padding: 2.2rem 2.5vw 2.2rem 2.5vw;
+      line-height: 1.6;
+      text-shadow: 0 2px 10px #2C2B3088;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 2;
+      position: relative;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.7rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 3.5rem auto;
+      z-index: 1;
+    }
+    .project-card {
+      background: rgba(76, 76, 81, 0.55);
+      border-radius: 24px;
+      box-shadow: 0 8px 36px 0 #2C2B3040, 0 1.5px 8px #F2C4CE22;
+      padding: 2.6rem 1.6rem 2.3rem 1.6rem;
+      text-align: center;
+      border: 2.5px solid #F2C4CE;
+      transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s, background 0.18s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      backdrop-filter: blur(9px) saturate(1.05);
+      -webkit-backdrop-filter: blur(9px) saturate(1.05);
+      z-index: 1;
+    }
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.045);
+      box-shadow: 0 16px 48px #F58F7C44, 0 2px 12px #2C2B3088;
+      border-color: #F58F7C;
+      background: rgba(242,196,206,0.18);
+    }
+    .project-card img {
+      width: 100%;
+      max-width: 100%;
+      height: 220px;
+      object-fit: cover;
+      margin-bottom: 1.7rem;
+      border-radius: 14px;
+      background: #4F4F51;
+      box-shadow: 0 2px 18px rgba(44,43,48,0.18);
+      border: 2.5px solid #D6D6D6;
+    }
+    .project-card h3 {
+      font-size: 1.65rem;
+      color: #F58F7C;
+      margin-bottom: 1.1rem;
+      font-family: 'Moonhouse', Arial, sans-serif;
+      letter-spacing: 1.3px;
+    }
+    .project-card p {
+      color: #D6D6D6;
+      font-size: 1.22rem;
+      font-family: 'TimeburnerBold', Arial, sans-serif;
+      margin: 0;
+      text-shadow: 0 1px 4px #2C2B3088;
+    }
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .project-card img {
+        height: 170px;
+      }
+    }
+    @media (max-width: 600px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .projects-title {
+        font-size: 2.2rem;
+        margin-top: 4.5rem;
+      }
+      .projects-subtitle {
+        font-size: 1.12rem;
+        margin-bottom: 2.5rem;
+      }
+      .project-card img {
+        height: 110px;
+      }
+    }
+    /* --- Animated Blobs Keyframes --- */
+    @keyframes blob1move {
+      0%   { transform: translate(0,0) scale(1,1) rotate(-12deg); border-radius: 55% 45% 60% 40%/50% 60% 40% 50%; }
+      25%  { transform: translate(10px, -20px) scale(1.07,0.95) rotate(-8deg); border-radius: 60% 40% 55% 45%/45% 65% 35% 55%; }
+      50%  { transform: translate(-10px, 10px) scale(0.97,1.05) rotate(-15deg); border-radius: 50% 50% 60% 40%/60% 40% 50% 50%; }
+      75%  { transform: translate(12px, -8px) scale(1.04,0.98) rotate(-10deg); border-radius: 58% 42% 62% 38%/52% 62% 38% 48%; }
+      100% { transform: translate(0,0) scale(1,1) rotate(-12deg); border-radius: 55% 45% 60% 40%/50% 60% 40% 50%; }
+    }
+    @keyframes blob2move {
+      0%   { transform: translate(0,0) scale(1,1) rotate(22deg); border-radius: 60% 40% 45% 55%/50% 60% 40% 50%; }
+      25%  { transform: translate(-12px, 18px) scale(1.06,0.93) rotate(20deg); border-radius: 65% 35% 50% 50%/55% 65% 35% 45%; }
+      50%  { transform: translate(12px, -10px) scale(0.94,1.08) rotate(27deg); border-radius: 58% 42% 48% 52%/60% 40% 60% 40%; }
+      75%  { transform: translate(-8px, 10px) scale(1.03,0.99) rotate(24deg); border-radius: 62% 38% 55% 45%/48% 62% 38% 52%; }
+      100% { transform: translate(0,0) scale(1,1) rotate(22deg); border-radius: 60% 40% 45% 55%/50% 60% 40% 50%; }
+    }
+    @keyframes blob3move {
+      0%   { transform: translate(0,0) scale(1,1) rotate(-8deg); border-radius: 45% 55% 50% 50%/60% 40% 60% 40%; }
+      25%  { transform: translate(14px, 10px) scale(1.05,0.97) rotate(-11deg); border-radius: 50% 50% 55% 45%/55% 45% 65% 35%; }
+      50%  { transform: translate(-10px, -12px) scale(0.98,1.03) rotate(-6deg); border-radius: 48% 52% 52% 48%/62% 38% 58% 42%; }
+      75%  { transform: translate(8px, 14px) scale(1.02,1.01) rotate(-10deg); border-radius: 52% 48% 50% 50%/58% 42% 62% 38%; }
+      100% { transform: translate(0,0) scale(1,1) rotate(-8deg); border-radius: 45% 55% 50% 50%/60% 40% 60% 40%; }
+    }
+    @keyframes blob4move {
+      0%   { transform: translate(0,0) scale(1,1) rotate(16deg); border-radius: 60% 40% 60% 40%/55% 45% 55% 45%; }
+      25%  { transform: translate(-14px, 8px) scale(1.08,0.95) rotate(12deg); border-radius: 65% 35% 55% 45%/60% 40% 50% 50%; }
+      50%  { transform: translate(10px, -14px) scale(0.92,1.07) rotate(20deg); border-radius: 58% 42% 62% 38%/52% 62% 38% 48%; }
+      75%  { transform: translate(-12px, 10px) scale(1.04,0.98) rotate(18deg); border-radius: 62% 38% 58% 42%/48% 58% 42% 52%; }
+      100% { transform: translate(0,0) scale(1,1) rotate(16deg); border-radius: 60% 40% 60% 40%/55% 45% 55% 45%; }
+    }
+    .blob1 { animation: blob1move 18s ease-in-out infinite; }
+    .blob2 { animation: blob2move 22s ease-in-out infinite; }
+    .blob3 { animation: blob3move 20s ease-in-out infinite; }
+    .blob4 { animation: blob4move 24s ease-in-out infinite; }
+    /* --- Cursor Light --- */
+    .cursor-light {
+      position: fixed;
+      top: 0; left: 0;
+      width: 52px; height: 52px;
+      margin-left: -26px; margin-top: -26px;
+      pointer-events: none;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff 0%, #fff8 60%, #fff0 100%);
+      box-shadow: 0 0 32px 8px #fff8, 0 0 0 0 #fff0;
+      opacity: 0.7;
+      z-index: 10000;
+      transition: opacity 0.2s;
+      will-change: transform;
+    }
+  </style>
+</head>
+<body>
+  <div class="blob-bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="blob blob4"></div>
+  </div>
+  <div class="cursor-light" id="cursorLight"></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="resume.html">Career Kit</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main class="projects-main">
+    <h1 class="projects-title">My Projects</h1>
+    <h2 class="projects-subtitle">Welcome to my little corner of the internet! <br>
+      Below is my portfolio that gets added to regularly.... <br>
+      probably when I should be sleeping. <br>
+      From Murder Mystery Games with multiple endings, <br>
+      to JavaScript experiments with WAY too many console logs, <br>
+      to Power BI reports that make data actually interesting, <br>
+      these are my projects that do stuff, solve problems, or just look cool. <br>
+      Whether it's front-end fun, back-end wizardry, or something in between, <br>
+      each project was built with trial, error, and occasional panic, <br>
+      but also with passion, curiosity, and intention. <br>
+      So please, click on a project, peek into my brain, <br>
+      and let the digital adventures begin.</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="assets/images/coming-soon-2.png" alt="Project 1 Thumbnail">
+        <h3>Project 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.</p>
+      </div>
+      <div class="project-card">
+        <img src="assets/images/coming-soon-2.png" alt="Project 2 Thumbnail">
+        <h3>Project 2</h3>
+        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+      </div>
+      <div class="project-card">
+        <img src="assets/images/coming-soon-2.png" alt="Project 3 Thumbnail">
+        <h3>Project 3</h3>
+        <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
+      </div>
+    </div>
+  </main>
+  <script>
+    // Fade-in on load
+    document.body.style.opacity = 0;
+    window.addEventListener('DOMContentLoaded', function() {
+      document.body.style.transition = 'opacity 0.6s';
+      document.body.style.opacity = 1;
+    });
+    // Fade-out on navigation
+    document.querySelectorAll('a[href]').forEach(function(link) {
+      if (link.hostname === window.location.hostname) {
+        link.addEventListener('click', function(e) {
+          if (
+            e.defaultPrevented ||
+            e.button !== 0 ||
+            e.metaKey || e.ctrlKey || e.shiftKey || e.altKey ||
+            link.target === '_blank'
+          ) return;
+          e.preventDefault();
+          document.body.classList.add('fade');
+          setTimeout(function() {
+            window.location.href = link.href;
+          }, 600);
+        });
+      }
+    });
+    // --- Cursor-following light effect ---
+    const cursorLight = document.getElementById('cursorLight');
+    document.addEventListener('mousemove', function(e) {
+      cursorLight.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      cursorLight.style.opacity = 0.7;
+    });
+    document.addEventListener('mouseleave', function() {
+      cursorLight.style.opacity = 0;
+    });
+  </script>
+</body>
+</html>
